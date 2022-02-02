@@ -2,14 +2,15 @@
 const router = require('express').Router();
 const {
         createNewUser,
-        getAllUsers
+        getAllUsers,
+        findUserId
 } = require('../../controllers/userController');
 
 
 router.route('/').get(getAllUsers).post(createNewUser)
 //get one by _id
 //include thoughts and friends
-
+router.route('/:id').get(findUserId)
 
 
 // update user by _id

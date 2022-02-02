@@ -1,8 +1,9 @@
+const req = require('express/lib/request');
 const User = require('../models/User');
 
 module.exports = {
     async getAllUsers(req, res) {
-        await User.find().then(res.send('dbUserData'))
+        await User.find().then((dbUserData) => res.json(dbUserData))
             .catch(err => res.status(500).json(err));
     },
     async createNewUser(req, res) {
@@ -10,7 +11,8 @@ module.exports = {
             .catch(err => res.status(500).json(err));
     },
     // finish find by id
-    async findUserId(req, res)=>{
-    await User.findOne
-}
+    // async findUserId(req, res)=>{
+    //     await User.findOne()
+    // }
+
 }
