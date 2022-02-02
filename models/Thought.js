@@ -3,7 +3,8 @@ const { reactionSchema } = require('./Reaction')
 
 const thoughtSchema = new Schema({
     thoughtText: {
-        type: { String, min: 1, max: 280 },
+        type: String,
+        maxLength: 280,
         required: true,
     },
     createdAt: {
