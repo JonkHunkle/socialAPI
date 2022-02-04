@@ -3,27 +3,23 @@ const router = require('express').Router();
 const {
         createNewUser,
         getAllUsers,
-        findUserId
+        findUserId,
+        deleteUser
 } = require('../../controllers/userController');
 
 
 router.route('/').get(getAllUsers).post(createNewUser)
-//get one by _id
-//include thoughts and friends
-router.route('/:id').get(findUserId)
 
-
-// update user by _id
-
-//delete user by _id
+//get one by _id      
+//delete and update
 //include cascade to delete associated thoughts
+router.route('/:id').get(findUserId)
+// .delete(deleteUser)
 
-
-// ~~~/api/users/:userId/friends/:friendId~~~
 
 //add friend to users friend list
-//req userID and friendID
-
 //delete friend from friend list
+
+//router.route('/:userId/friends/:friendId').post().delete()
 
 module.exports = router

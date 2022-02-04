@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, Types, model } = require('mongoose')
 
 
 const userSchema = new Schema({
@@ -17,11 +17,11 @@ const userSchema = new Schema({
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     thoughts: [{
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Thought'
     }],
     friends: [{
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     }]
 },
@@ -38,6 +38,6 @@ userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 })
 
-const User = model('User', userSchema)
+const User = model('User', userSchema, 'users')
 
 module.exports = User; 
