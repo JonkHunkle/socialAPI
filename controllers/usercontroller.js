@@ -1,3 +1,4 @@
+const { reactionSchema } = require('../models/Reaction');
 const User = require('../models/User');
 
 module.exports = {
@@ -15,7 +16,7 @@ module.exports = {
             const singleUser = await User.findOne({ _id: req.params.id }).populate('thoughts').populate('friends')
 
             if (!singleUser) {
-                res.status(404).json({ message: 'try another userid!' })
+                res.status(404).json({ message: 'try another user id!' })
             } else { res.json(singleUser) }
 
         } catch (err) {
@@ -23,12 +24,23 @@ module.exports = {
             return res.status(500).json(err)
         }
     },
-    // await deleteUser(req, res) {
-    //     try {
-    //         await User.findOne()
-
-    //     } catch (err) {
-    //         res.status(500).json(err)
-    //     }
-    // },
+    async deleteUser(req, res) {
+        await User.findOneAndDelete({ _id: req.params.id },
+            (err, user) => {
+                console.log('user?', user)
+                if (err) { console.log(err) } else {
+                    res.json(user, ' deleted');
+                }
+            }
+        )
+    },
+    async updateUser(req, res) {
+        const updateUser = await User.findByIdAndUpdate({ _id: req.params.id }, { $set: req.body }, { runValidators: true, })
+        console.log('the user', updateUser)
+        if (!updateUser) {
+            res.status(404).json({ message: 'try another user id!' })
+        } else {
+            res.json('you updated it!')
+        }
+    }
 }

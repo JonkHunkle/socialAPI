@@ -4,17 +4,15 @@ const {
         createNewUser,
         getAllUsers,
         findUserId,
-        deleteUser
+        deleteUser,
+        updateUser
 } = require('../../controllers/userController');
 
 
 router.route('/').get(getAllUsers).post(createNewUser)
 
-//get one by _id      
-//delete and update
-//include cascade to delete associated thoughts
-router.route('/:id').get(findUserId)
-// .delete(deleteUser)
+
+router.route('/:id').get(findUserId).delete(deleteUser).patch(updateUser)
 
 
 //add friend to users friend list
