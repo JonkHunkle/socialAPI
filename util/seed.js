@@ -20,7 +20,7 @@ connection.once('open', async () => {
         thoughts.push({ username, thoughtText })
         users.push({
             username,
-            email,
+            email
         });
     }
 
