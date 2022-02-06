@@ -41,7 +41,7 @@ module.exports = {
     async updateUser(req, res) {
         try {
             const update = await User.findOneAndUpdate(
-                { _id: req.params.userId },
+                { _id: req.params.id },
                 { $set: req.body },
                 { runValidators: true, new: true }
             );

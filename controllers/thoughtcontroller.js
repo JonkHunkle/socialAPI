@@ -68,7 +68,7 @@ module.exports = {
     },
     async addReaction(req, res) {
         try {
-            const singleThought = await Thought.findOneAndUpdate({ _id: req.params.id }, { $addToSet: { reactionBody: req.body } })
+            const singleThought = await Thought.findOneAndUpdate({ _id: req.params.id }, { $addToSet: { reactions: req.body } })
 
             if (!singleThought) {
                 res.status(404).json({ message: 'try another thought id!' })
