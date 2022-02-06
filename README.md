@@ -3,6 +3,9 @@
 ## Description
 
 This repo will have code that handles the backend of a social media site. This includes the ability to add users, friends, thoughts, and reactions to to thoughts
+<br/>
+
+![userImg](./assets/users.png)
 
 ## Installation
 
@@ -18,7 +21,7 @@ This repo will have code that handles the backend of a social media site. This i
 
 ## Demonstration Video
 
-
+[Click here for a demo!](https://drive.google.com/file/d/14bg6NR2vI3dtfbR-vfehTYRnD7YHNSgO/view?usp=sharing)
 
 ## Questions
 
