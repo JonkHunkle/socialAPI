@@ -14,6 +14,8 @@ This repo will have code that handles the backend of a social media site. This i
 - Start your server by using ```node server.js``` in the terminal
 - You would then switch over to insomnia to test each route. Routes provided will account for GET, POST, PATCH, and DELETE
 
+* The included file to seed the database is accessible in root and can be run with ```node  util/seed```
+
 ## Demonstration Video
 
 
