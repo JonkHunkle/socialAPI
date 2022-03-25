@@ -5,7 +5,12 @@
 This repo will have code that handles the backend of a social media site. This includes the ability to add users, friends, thoughts, and reactions to to thoughts
 <br/>
 
-
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Demonstration](#demonstration)
+* [Contact](#contact)
 
 ## Installation
 
@@ -19,12 +24,12 @@ This repo will have code that handles the backend of a social media site. This i
 
 * The included file to seed the database is accessible in root and can be run with ```node  util/seed```
 
-## Demonstration Video
+## Demonstration
 
 [Click here for a demo!](https://drive.google.com/file/d/14bg6NR2vI3dtfbR-vfehTYRnD7YHNSgO/view?usp=sharing)
 <br/>
 ![userImg](./assets/users.png)
 
-## Questions
+## Contact
 
 *Find me on GitHub* [@JonkHunkle](https://github.com/JonkHunkle)
